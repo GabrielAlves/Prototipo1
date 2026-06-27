@@ -30,6 +30,12 @@ cd ..
 python run.py &
 BACKEND_PID=$!
 
+# aguarda backend estar disponível antes de iniciar o frontend
+until curl -sf http://localhost:8000/health > /dev/null
+do
+    sleep 1
+done
+
 cd ..
 
 echo "Iniciando frontend..."
@@ -39,7 +45,7 @@ pip install -r requirements.txt
 
 cat > .env <<EOF
 FRONT_PORT=5001
-API_BASE=http://localhost:8000
+BACKEND_API_BASE=http://localhost:8000
 EOF
 
 python app.py &
