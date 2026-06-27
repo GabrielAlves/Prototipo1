@@ -1,9 +1,25 @@
 #!/bin/bash
 
+# Obs: o script considera que o usuário está na raiz do diretório do protótipo1
+SENHA='123' # Senha de usuário de exemplo. Troque pela do seu usuário do SO.
+
 set -e
 
-SENHA='123'
+echo "Apagando o virtual environment se existir..."
+rm -rf venv
+
+echo "Começando a contagem do tempo..."
 START=$(date +%s)
+
+echo "Instalando pacotes necessários para o script..."
+
+sudo apt-get update
+sudo apt-get install -y python3 python3-venv python3-pip curl default-mysql-client
+
+# Verifica se o MySQL está acessível antes de continuar
+until mysqladmin ping -h 127.0.0.1 --silent >/dev/null 2>&1; do
+  sleep 1
+done
 
 echo "Criando ambiente virtual..."
 python3 -m venv venv
@@ -55,7 +71,7 @@ cd ..
 
 echo "Aguardando aplicação..."
 
-# checa se o frontend está disponível. O frontend depende do back e do bd no docker-compose
+# checa se o frontend está disponível.
 until curl -sf http://localhost:5001/ > /dev/null
 do
     sleep 1
@@ -65,7 +81,12 @@ END=$(date +%s)
 
 DEPLOY_TIME=$((END-START))
 
-echo "tempo_deploy=$DEPLOY_TIME" >> resultado_deploy_p1.txt
-echo "status=sucesso" >> resultado_deploy_p1.txt
+echo "Encerrando a contagem de tempo"
+
+python3 -m pytest
+
+echo "tempo_deploy=$DEPLOY_TIME" >> resultado_tempo_deploy.txt
+echo "status=sucesso" >> resultado_tempo_deploy.txt
+echo "---------------" >> resultado_tempo_deploy.txt
 
 echo "Deploy concluído em $DEPLOY_TIME segundos"
