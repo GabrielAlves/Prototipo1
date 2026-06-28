@@ -1,4 +1,4 @@
-DROP USER IF EXISTS 'admin'@'localhost';
+CREATE DATABASE IF NOT EXISTS db;
 
 CREATE USER 'admin'@'localhost'
 IDENTIFIED WITH mysql_native_password BY 'admin';
