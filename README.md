@@ -6,7 +6,7 @@ O objetivo deste protótipo é servir como cenário base para comparação com a
 
 Observação: este repositório contém artefatos do desenvolvimento inicial do projeto que não participam da versão experimental realizada (resquícios de código). Para fins de "archive", o repositório original do Prototipo1 pode ser acessado em [MediaManager](https://github.com/GabrielAlves/MediaManager). 
 
-![Interface de usuário da aplicação](https://github.com/GabrielAlves/Prototipos/screenshots/interface_usuario_prototipo1.png)
+![Interface de usuário da aplicação](https://raw.githubusercontent.com/GabrielAlves/Prototipos/refs/heads/main/screenshots/interface_usuario_prototipo1.png)
 Figura 1. Interface de usuário da aplicação
 
 ## Funcionalidades
@@ -42,7 +42,7 @@ O `script_deploy.sh` executa automaticamente os passos de configuração descrit
 
 1. Execute `sudo bash script_deploy.sh`
 
-![Saída esperada para o arquivo de deploy](screenshots/script_deploy_executado.png)
+![Saída esperada para o arquivo de deploy](https://raw.githubusercontent.com/GabrielAlves/Prototipos/refs/heads/main/screenshots/script_deploy_executado_prototipo1.png)
 Figura 2. Resultado do `script_deploy.sh`
 
 ## Como configurar manualmente
