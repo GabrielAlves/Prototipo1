@@ -1,6 +1,6 @@
 # Prototipo1
 
-Este protótipo implementa uma aplicação web de gerenciamento de arquivos multimídia (imagens, áudios e vídeos) utilizando execução tradicional sem conteinerização. Todos os componentes da aplicação são executados diretamente no sistema operacional hospedeiro.
+Este protótipo é parte de um TCC e implementa uma aplicação web de gerenciamento de arquivos multimídia (imagens, áudios e vídeos) utilizando execução tradicional sem conteinerização. Todos os componentes da aplicação são executados diretamente no sistema operacional hospedeiro. O diretório arquivos_exemplo contém exemplos de arquivos de diversos formatos que são aceitos na aplicação (mp3, mp4, mkv, aac, png, jpeg, gif)
 
 O objetivo deste protótipo é servir como cenário base para comparação com as abordagens conteinerizadas dos Protótipos 2 e 3.
 
@@ -23,17 +23,19 @@ O objetivo deste protótipo é servir como cenário base para comparação com a
 
 - Python 3.11
 - MySQL 8.0
-- git
+- Git
 
 ## Como configurar automaticamente
 
-O script `script_deploy.sh` executa os passos de configuração, descritos abaixo, automaticamente e também executa os testes unitários no final da execução. Foi criado para facilitar o deploy da aplicação para quem desejar utilizá-la.
+O script `script_deploy.sh` executa os passos de configuração, descritos abaixo, automaticamente e também executa os testes unitários no final da execução. Foi criado para facilitar o deploy da aplicação para os avaliadores.
 
 1. Execute `sudo bash script_deploy.sh`
 
+![Saída esperada para o arquivo de deploy](screenshots/script_deploy_executado.png)
+
 ## Como configurar manualmente
 
-As instruções passadas nesse README pressupoem que o sistema host seja Linux (Ubuntu 24.04), mas o protótipo pode e foi testado também em sistema Windows (Windows 11). Para executar em ambiente windows, é necessário adaptar os comandos descritos nas configurações abaixo, por exemplo, usar `venv\Scripts\activate` em vez de `source venv/bin/activate`, `copy` em vez de `cp`, etc. 
+As instruções passadas nesse README pressupoem que o sistema host seja Linux (Ubuntu 24.04), mas o protótipo pode ser e já foi executado também em sistema Windows (Windows 11). Para executar em ambiente windows, é necessário adaptar os comandos descritos nas configurações abaixo, por exemplo, usar `venv\Scripts\activate` em vez de `source venv/bin/activate`, `copy` em vez de `cp`, etc. 
 
 ### Configure o banco de dados
 
@@ -43,7 +45,7 @@ O script `db_setup.sql` foi criado para facilitar a configuração do banco de d
 
 ### Configure o backend
 
-Observação: as variáveis de ambiente essenciais foram deixadas em claro nos .env.examples para facilitar a execução desse protótipo, mas em sistemas reais, essas informações não podem estar comitadas nesses arquivos! 
+Observação: as variáveis de ambiente essenciais foram deixadas em claro nos .env.examples para facilitar a execução, mas em sistemas reais, essas informações não podem estar em claro nesses arquivos! 
 
 1. Clone o repositório: `git clone https://github.com/GabrielAlves/Prototipo1`
 2. Entre no diretório: `cd Prototipo1`
@@ -72,7 +74,7 @@ Em outro processo e na raiz do Protótipo1 (Prototipo1/)
 1. Entre no diretório backend: `cd backend`
 2. Execute: `python -m pytest`
 
-## Como executar os testes de tempo
+## Como executar os testes de tempo de deploy
 
 1. Execute `sudo bash script_tempo.sh`
 
