@@ -27,9 +27,9 @@ O objetivo deste protótipo é servir como cenário base para comparação com a
 
 ## Como configurar automaticamente
 
-O script `script_deploy.sh` executa os passos de configuração, descritos abaixo, automaticamente e também executa os testes unitários no final da execução. Foi criado para facilitar o deploy da aplicação.
+O script `script_deploy.sh` executa os passos de configuração, descritos abaixo, automaticamente e também executa os testes unitários no final da execução. Foi criado para facilitar o deploy da aplicação para quem desejar utilizá-la.
 
-1. Execute o script `sudo bash script_deploy.sh`
+1. Execute `sudo bash script_deploy.sh`
 
 ## Como configurar manualmente
 
@@ -63,6 +63,14 @@ Em outro processo e na raiz do Protótipo1 (Prototipo1/)
 
 1. Entre no diretório backend: `cd backend`
 2. Execute: `python -m pytest`
+
+## Como executar os testes de tempo
+
+1. Execute `sudo bash script_tempo.sh`
+
+ou
+
+1. Execute `sudo bash executar_varios_script_tempo.sh` (default: 10 execuções. O número pode ser modificado no for do script `executar_varios_script_tempo.sh`)
 
 ## Observações adicionais
 
