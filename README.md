@@ -1,12 +1,12 @@
 # Prototipo1
 
-Este protótipo é parte de um TCC e implementa uma aplicação web de gerenciamento de arquivos multimídia (imagens, áudios e vídeos) utilizando execução tradicional sem conteinerização. Todos os componentes da aplicação são executados diretamente no sistema operacional hospedeiro. O diretório arquivos_exemplo contém exemplos de arquivos de diversos formatos que são aceitos na aplicação (mp3, mp4, mkv, aac, png, jpeg, gif).
+Este protótipo é parte de um TCC e implementa uma aplicação web de gerenciamento de arquivos multimídia (imagens, áudios e vídeos) utilizando execução tradicional sem conteinerização. Todos os componentes da aplicação são executados diretamente no sistema operacional hospedeiro. O diretório arquivos_exemplo em [Prototipos](https://github.com/GabrielAlves/Prototipos) contém exemplos de arquivos de diversos formatos que são aceitos na aplicação (mp3, mp4, mkv, aac, png, jpeg, gif). 
 
 O objetivo deste protótipo é servir como cenário base para comparação com as abordagens conteinerizadas dos Protótipos 2 e 3.
 
 Observação: este repositório contém artefatos do desenvolvimento inicial do projeto que não participam da versão experimental realizada (resquícios de código). Para fins de "archive", o repositório original do Prototipo1 pode ser acessado em [MediaManager](https://github.com/GabrielAlves/MediaManager). 
 
-![Interface de usuário da aplicação](screenshots/interface_usuario.png)
+![Interface de usuário da aplicação](https://github.com/GabrielAlves/Prototipos/screenshots/interface_usuario_prototipo1.png)
 Figura 1. Interface de usuário da aplicação
 
 ## Funcionalidades
