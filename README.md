@@ -1,14 +1,16 @@
 # Prototipo1
 
-Este protótipo é parte de um TCC e implementa uma aplicação web de gerenciamento de arquivos multimídia (imagens, áudios e vídeos) utilizando execução tradicional sem conteinerização. Todos os componentes da aplicação são executados diretamente no sistema operacional hospedeiro. O diretório arquivos_exemplo contém exemplos de arquivos de diversos formatos que são aceitos na aplicação (mp3, mp4, mkv, aac, png, jpeg, gif)
+Este protótipo é parte de um TCC e implementa uma aplicação web de gerenciamento de arquivos multimídia (imagens, áudios e vídeos) utilizando execução tradicional sem conteinerização. Todos os componentes da aplicação são executados diretamente no sistema operacional hospedeiro. O diretório arquivos_exemplo contém exemplos de arquivos de diversos formatos que são aceitos na aplicação (mp3, mp4, mkv, aac, png, jpeg, gif).
 
 O objetivo deste protótipo é servir como cenário base para comparação com as abordagens conteinerizadas dos Protótipos 2 e 3.
+
+Observação: este repositório contém artefatos do desenvolvimento inicial do projeto que não participam da versão experimental realizada (resquícios de código). Para fins de "archive", o repositório original do Prototipo1 pode ser acessado em [MediaManager](https://github.com/GabrielAlves/MediaManager). 
 
 ![Interface de usuário da aplicação](screenshots/interface_usuario.png)
 Figura 1. Interface de usuário da aplicação
 
 ## Funcionalidades
-- Inserção de arquivos multimídia (imagem, áudio e vídeo)
+- Inserção de arquivos multimídia (imagem, áudio e vídeo) de até 10 MB
 - Listagem dos arquivos armazenados
 - Visualização e reprodução dos arquivos enviados
 - Remoção de arquivos
@@ -30,7 +32,13 @@ Figura 1. Interface de usuário da aplicação
 
 ## Como configurar automaticamente
 
-O `script_deploy.sh` executa os passos de configuração, descritos abaixo, automaticamente e também executa os testes unitários no final da execução. Foi criado para facilitar o deploy da aplicação para os avaliadores.
+Os 2 scripts abaixo foram criados para auxiliar os avaliadores.
+
+O `script_pacotes.sh` deve ser executado na primeira vez para instalar com o apt-get os pacotes que são utilizados pelo `script_deploy.sh`. Esses pacotes são git, python3, python3-venv, python3-pip, mysql-server-8.0, mysql-client-core-8.0, curl.
+
+1. Execute `script_pacotes.sh`
+
+O `script_deploy.sh` executa automaticamente os passos de configuração descritos logo abaixo e também executa os testes unitários no final da execução.
 
 1. Execute `sudo bash script_deploy.sh`
 
@@ -85,7 +93,3 @@ Em outro processo e na raiz do Protótipo1 (Prototipo1/)
 ou
 
 1. Execute `sudo bash executar_varios_script_tempo.sh` (default: 10 execuções. O número pode ser modificado no for do script `executar_varios_script_tempo.sh`)
-
-## Observações adicionais
-
-Este repositório contém artefatos herdados do desenvolvimento inicial do projeto que não participam da versão experimental realizada. Para fins de "archive", o repositório original do Prototipo1 pode ser acessado em [MediaManager](https://github.com/GabrielAlves/MediaManager). 
