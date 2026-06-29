@@ -4,6 +4,9 @@ Este protótipo é parte de um TCC e implementa uma aplicação web de gerenciam
 
 O objetivo deste protótipo é servir como cenário base para comparação com as abordagens conteinerizadas dos Protótipos 2 e 3.
 
+![Interface de usuário da aplicação](screenshots/interface_usuario.png)
+Figura 1. Interface de usuário da aplicação
+
 ## Funcionalidades
 - Inserção de arquivos multimídia (imagem, áudio e vídeo)
 - Listagem dos arquivos armazenados
@@ -27,11 +30,12 @@ O objetivo deste protótipo é servir como cenário base para comparação com a
 
 ## Como configurar automaticamente
 
-O script `script_deploy.sh` executa os passos de configuração, descritos abaixo, automaticamente e também executa os testes unitários no final da execução. Foi criado para facilitar o deploy da aplicação para os avaliadores.
+O `script_deploy.sh` executa os passos de configuração, descritos abaixo, automaticamente e também executa os testes unitários no final da execução. Foi criado para facilitar o deploy da aplicação para os avaliadores.
 
 1. Execute `sudo bash script_deploy.sh`
 
 ![Saída esperada para o arquivo de deploy](screenshots/script_deploy_executado.png)
+Figura 2. Resultado do `script_deploy.sh`
 
 ## Como configurar manualmente
 
