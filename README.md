@@ -1,6 +1,6 @@
 # Prototipo1
 
-Este protótipo implementa uma aplicação web de gerenciamento de arquivos multimídia (imagens, áudios e vídeos) utilizando execução tradicional sem conteinerização. Todos os componentes da aplicação (frontend, backend, banco de dados e armazenamento de arquivos) são executados diretamente no sistema operacional hospedeiro.
+Este protótipo implementa uma aplicação web de gerenciamento de arquivos multimídia (imagens, áudios e vídeos) utilizando execução tradicional sem conteinerização. Todos os componentes da aplicação são executados diretamente no sistema operacional hospedeiro.
 
 O objetivo deste protótipo é servir como cenário base para comparação com as abordagens conteinerizadas dos Protótipos 2 e 3.
 
@@ -33,9 +33,17 @@ O script `script_deploy.sh` executa os passos de configuração, descritos abaix
 
 ## Como configurar manualmente
 
+As instruções passadas nesse README pressupoem que o sistema host seja Linux (Ubuntu 24.04), mas o protótipo pode e foi testado também em sistema Windows (Windows 11). Para executar em ambiente windows, é necessário adaptar os comandos descritos nas configurações abaixo, por exemplo, usar `venv\Scripts\activate` em vez de `source venv/bin/activate`, `copy` em vez de `cp`, etc. 
+
 ### Configure o banco de dados
 
+O script `db_setup.sql` foi criado para facilitar a configuração do banco de dados. Por padrão, ele cria um banco de dados `db`, um usuário padrão `admin` e fornece privilégios para o usuário `admin`. O comando abaixo usa o usuário root para inserir os comandos desse script: 
+
+1. Execute `mysql -u root -p < db_setup.sql`
+
 ### Configure o backend
+
+Observação: as variáveis de ambiente essenciais foram deixadas em claro nos .env.examples para facilitar a execução desse protótipo, mas em sistemas reais, essas informações não podem estar comitadas nesses arquivos! 
 
 1. Clone o repositório: `git clone https://github.com/GabrielAlves/Prototipo1`
 2. Entre no diretório: `cd Prototipo1`
