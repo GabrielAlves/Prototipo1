@@ -1,45 +1,69 @@
-# MediaManagerAPI
+# Prototipo1
 
-É uma API REST simples desenvolvida em Python para gerenciamento de arquivos multimídia (imagens e vídeos), com upload, listagem e exclusão com suporte à integração com AWS S3 ou armazenamento local.
+Este protótipo implementa uma aplicação web de gerenciamento de arquivos multimídia (imagens, áudios e vídeos) utilizando execução tradicional sem conteinerização. Todos os componentes da aplicação (frontend, backend, banco de dados e armazenamento de arquivos) são executados diretamente no sistema operacional hospedeiro.
+
+O objetivo deste protótipo é servir como cenário base para comparação com as abordagens conteinerizadas dos Protótipos 2 e 3.
 
 ## Funcionalidades
-
-- Upload de arquivos (até 10MB): (POST /upload)
-- Listagem de arquivos com metadados (GET /list)
-- Exclusão de arquivos (DELETE /delete/{id})
-- Autenticação via API Key
-- Integração com AWS S3
-- Modo alternativo de armazenamento local
-- Testes unitários
+- Inserção de arquivos multimídia (imagem, áudio e vídeo)
+- Listagem dos arquivos armazenados
+- Visualização e reprodução dos arquivos enviados
+- Remoção de arquivos
+- Persistência de metadados em banco relacional e arquivos de upload
+- Testes unitários com Pytest
 
 ## Tecnologias utilizadas
+- HTML, CSS e JavaScript
+- Python 3.11
+- Flask 3.1
+- MySQL 8.0
+- Pytest 9.0
 
-- Python 3.10+
-- Flask
-- Flask-SQLAlchemy
-- SQLite
-- AWS S3 (via boto3)
-- Pytest
+## Requisitos
 
-## Como usar (Instruções para windows)
+- Python 3.11
+- MySQL 8.0
+- git
 
-1. Clone o repositório: `git clone https://github.com/GabrielAlves/MediaManagerAPI`
-2. Entre no diretório: `cd MediaManagerAPI`
-3. Crie um ambiente virtual: `virtualenv venv`
-4. Ative o ambiente virtual: `venv\Scripts\activate` 
-5. Instale as dependências: `pip install -r requirements.txt`
-6. Copie o arquivo env de exemplo para o diretório app: `copy .env.example "app/.env"`
-7. Edite as variáveis do arquivo .env
-9. Execute a aplicação: `python run.py`
-10. Acesse a API em `http://localhost:5000`
+## Como configurar automaticamente
 
-## Como configurar o S3 (caso desejado)
+O script `script_deploy.sh` executa os passos de configuração, descritos abaixo, automaticamente e também executa os testes unitários no final da execução. Foi criado para facilitar o deploy da aplicação.
 
-1. Crie um bucket no Amazon s3
-2. Crie um usuário IAM com permissão ao S3
-3. Insira as credenciais da AWS no .env
-4. Altere `STORAGE_MODE=local` para `STORAGE_MODE=s3`
+1. Execute o script `sudo bash script_deploy.sh`
 
-## Como executar os testes unitários
+## Como configurar manualmente
 
-Execute: `python -m pytest`
+### Configure o banco de dados
+
+### Configure o backend
+
+1. Clone o repositório: `git clone https://github.com/GabrielAlves/Prototipo1`
+2. Entre no diretório: `cd Prototipo1`
+3. Crie um ambiente virtual: `python3 -m venv venv`
+4. Ative o ambiente virtual: `source venv/bin/activate` 
+5. Entre no diretório backend: `cd backend`
+6. Instale as dependências: `pip install -r requirements.txt`
+7. Copie o arquivo env de exemplo para o diretório app: `cp .env.example app/.env`
+8. Edite as variáveis do arquivo .env. É importante que SQLALCHEMY_DATABASE_URI e STORAGE_MODE sejam definidos.
+9. Execute o backend: `python run.py`
+9. (opcional) Cheque o backend em `http://localhost:8000/health`
+
+### Configure o frontend
+
+Em outro processo e na raiz do Protótipo1 (Prototipo1/)
+
+1. Ative o ambiente virtual: `source venv/bin/activate` 
+2. Entre na pasta frontend: `cd frontend`
+3. Instale as dependências: `pip install -r requirements.txt`
+4. Copie o arquivo env de exemplo para o mesmo diretório: `cp .env.example .env`. É importante que FRONT_PORT e BACKEND_API_BASE estejam definidos.
+5. Execute o frontend: `python app.py`
+6. Acesse a tela em `http://localhost:5001`
+
+## Como executar os testes unitários diretamente
+
+1. Entre no diretório backend: `cd backend`
+2. Execute: `python -m pytest`
+
+## Observações adicionais
+
+Este repositório contém artefatos herdados do desenvolvimento inicial do projeto que não participam da versão experimental realizada. Para fins de "archive", o repositório original do Prototipo1 pode ser acessado em [MediaManager](https://github.com/GabrielAlves/MediaManager). 

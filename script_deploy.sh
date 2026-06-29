@@ -65,6 +65,8 @@ done
 
 cd backend
 
+echo "executando os testes"
+
 python -m pytest --disable-warnings
 
 echo "Tela da aplicação: http://127.0.0.1:5001"
