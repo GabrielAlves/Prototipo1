@@ -63,5 +63,9 @@ do
     sleep 1
 done
 
+cd backend
+
+python -m pytest --disable-warnings
+
 echo "Tela da aplicação: http://127.0.0.1:5001"
 echo "Status do backend: http://127.0.0.1:8000/health"
