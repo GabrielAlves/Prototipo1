@@ -24,11 +24,12 @@ Figura 1. Interface de usuário da aplicação
 - MySQL 8.0
 - Pytest 9.0
 
-## Requisitos
-
-- Python 3.11
-- MySQL 8.0
-- Git
+## Pacotes necessários
+- git
+- python
+- venv
+- pip
+- mysql
 
 ## Como configurar automaticamente
 
@@ -36,7 +37,7 @@ Os 2 scripts abaixo foram criados para auxiliar os avaliadores.
 
 O `script_pacotes.sh` deve ser executado na primeira vez para instalar com o apt-get os pacotes que são utilizados pelo `script_deploy.sh`. Esses pacotes são git, python3, python3-venv, python3-pip, mysql-server-8.0, mysql-client-core-8.0, curl.
 
-1. Execute `script_pacotes.sh`
+1. Execute `sudo bash script_pacotes.sh`
 
 O `script_deploy.sh` executa automaticamente os passos de configuração descritos logo abaixo e também executa os testes unitários no final da execução.
 
@@ -93,3 +94,7 @@ Em outro processo e na raiz do Protótipo1 (Prototipo1/)
 ou
 
 1. Execute `sudo bash executar_varios_script_tempo.sh` (default: 10 execuções. O número pode ser modificado no for do script `executar_varios_script_tempo.sh`)
+
+## Resultados de tempo de deploy
+
+Os resultados se encontram em `resultado_tempo_deploy.txt`. O arquivo usado para calcular as médias e desvio padrões pode ser acessado [aqui](github.com/GabrielAlves/Prototipos/blob/main/desvio_padrao.py).
